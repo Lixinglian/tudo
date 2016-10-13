@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding:0;
+    list-style: none;
+}
+body{
+    font-size: 16px;
+    color: #fff;
+}
+i{
+    font-style: normal;
+}
+@font-face{
+    font-family: 'icon-font';
+    src:url(../iconfont.woff);
+}
+.icon-font{
+    font-family: icon-font;
+}
+.icon-duigou:before { content: "\e651"; }
+.icon-01:before { content: "\e600"; }
+.icon-jiahao:before { content: "\e61e"; }
+.icon-shanchu:before { content: "\e63d"; }
+.icon-naozhong:before { content: "\e68e"; }
+.icon-bianji:before { content: "\e613"; }
+.icon-wancheng:before { content: "\e7dc"; }
+.icon-weiwancheng:before { content: "\e657"; }
+.icon-rili:before { content: "\e61d"; }
+.icon-mayishangchengdaizhifudengicon05:before { content: "\e617"; }
+.icon-biaoqian:before { content: "\e62a"; }
+.icon-bianqian:before { content: "\e677"; }
+.icon-xiangmu:before { content: "\e64d"; }
+.icon-unie664:before { content: "\e662"; }
+.icon-fasong:before { content: "\e745"; }
+.icon-maikefeng:before { content: "\e64d"; }
+.icon-biaozhuanhuan:before { content: "\e607"; }
+.icon-caidan:before { content: "\e639"; }
+.icon-caidan1:before { content: "\e61f"; }
+.icon-biaoqian1:before { content: "\e6f8"; }
+.icon-xiaolian:before { content: "\e665"; }
+.icon-cry:before { content: "\e623"; }
+.icon-ku:before { content: "\e715"; }
+.icon-ku1:before { content: "\e60a"; }
+@mixin userRem($design-size){
+    $device-width-size:320px,360px,375px,384px,412px,414px,$design-size;
+    @each $size in $device-width-size{
+        @media screen and (min-width:#{$size}){
+            html{
+                font-size: 100px*$size/$design-size;
+            }
+        }
+    }
+}
+@mixin center{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+@include userRem(540px);
+    .header{
+        .icon-font{
+            @include center;
+            width: 0.28rem;
+            height: 0.28rem;
+//          background: #fff;
+        }
+        background: #344561;
+        &::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .header-left{
+            position: relative;
+            width:0.84rem;
+            height:0.86rem;
+            float: left;
+        }
+        .header-center{
+            width:3.63rem;
+            height:0.86rem;
+            float: left;
+            padding-left:0.07rem;
+            box-sizing: border-box;
+            line-height:0.86rem;
+        }
+        .header-right{
+            position: relative;
+            width:0.93rem;
+            height:0.86rem;
+            float: right;
+            .iconfont{
+                @include center;
+                width: 0.27rem;
+                height: 0.27rem;
+                background: #fff;
+            }
+        }
+    }
+    .content-box{
+        width: 100%;
+        padding: 0.24rem 0.26rem 0;
+        box-sizing: border-box;
+        .conttent-inner{
+            width: 4.89rem;
+//          background: red;
+            border: 1px solid #c8bab7 ;
+            box-sizing: border-box;
+            margin-bottom: 0.04rem;
+            padding-left: 0.38rem;
+            position: relative;
+            left: 0;
+            &::after{
+                content: "";
+                clear: both;
+                display: block;
+            }
+            @keyframes donghua{
+                0%{
+                    left: 0;
+                    opacity:1;
+                }
+                100%{
+                    left:-100%;
+                    opacity:0;
+                }
+            }
+            &.dis {
+                 animation: donghua .5s linear both;
+            }
+            .content-left{
+                width: 2.90rem;
+                height:1.04rem;
+                float: left;
+                padding-top: 0.19rem;
+                box-sizing: border-box;
+//              position: relative;
+                .task{
+                    display: inline-block;
+                    width:100%;
+                    font-size: 0.31rem;
+                }
+                .delete{
+                    position: absolute;
+                    top:0.32rem;
+                    bottom: 0;
+                    width:2.90rem;
+                    height: 0.01rem;
+                    background:#ccc;
+                    display: none;
+                }
+            }
+            .content-left.done{
+                &{color: #ccc;}
+                .delete{display: block;}
+             }    
+            .content-right{
+                width: 1.50rem;
+                height:1.04rem;
+                float: right;
+                line-height:1.04rem;
+                text-align: center;
+                display: none;
+                .icon-shanchu{
+                   font-size: 0.35rem;
+                }
+            }
+        }
+        
+    }
+    .foot-box{
+        width:100%;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+//      background:red;
+        &::after{
+            content: "";
+            clear: both;
+            display: block;
+        }
+        .pub{
+            height: 0.78rem;
+            width: 50%;
+            float: left;
+            padding-top: 0.18rem;
+            box-sizing: border-box;
+            text-align: center;
+            color: #005D4D;
+            .iconfont{
+                display:block;
+                width:0.18rem;
+                height: 0.18rem;
+//              color: #005d4d;
+            }
+        }
+        .left{float: left;}
+        .right{float: right;}
+    }

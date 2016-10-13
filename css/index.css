@@ -1,0 +1,336 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-size: 16px;
+  color: #fff;
+}
+
+i {
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'icon-font';
+  src: url(../iconfont.woff);
+}
+
+.icon-font {
+  font-family: icon-font;
+}
+
+.icon-duigou:before {
+  content: "\e651";
+}
+
+.icon-01:before {
+  content: "\e600";
+}
+
+.icon-jiahao:before {
+  content: "\e61e";
+}
+
+.icon-shanchu:before {
+  content: "\e63d";
+}
+
+.icon-naozhong:before {
+  content: "\e68e";
+}
+
+.icon-bianji:before {
+  content: "\e613";
+}
+
+.icon-wancheng:before {
+  content: "\e7dc";
+}
+
+.icon-weiwancheng:before {
+  content: "\e657";
+}
+
+.icon-rili:before {
+  content: "\e61d";
+}
+
+.icon-mayishangchengdaizhifudengicon05:before {
+  content: "\e617";
+}
+
+.icon-biaoqian:before {
+  content: "\e62a";
+}
+
+.icon-bianqian:before {
+  content: "\e677";
+}
+
+.icon-xiangmu:before {
+  content: "\e64d";
+}
+
+.icon-unie664:before {
+  content: "\e662";
+}
+
+.icon-fasong:before {
+  content: "\e745";
+}
+
+.icon-maikefeng:before {
+  content: "\e64d";
+}
+
+.icon-biaozhuanhuan:before {
+  content: "\e607";
+}
+
+.icon-caidan:before {
+  content: "\e639";
+}
+
+.icon-caidan1:before {
+  content: "\e61f";
+}
+
+.icon-biaoqian1:before {
+  content: "\e6f8";
+}
+
+.icon-xiaolian:before {
+  content: "\e665";
+}
+
+.icon-cry:before {
+  content: "\e623";
+}
+
+.icon-ku:before {
+  content: "\e715";
+}
+
+.icon-ku1:before {
+  content: "\e60a";
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 59.25926px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 66.66667px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 69.44444px;
+  }
+}
+
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 71.11111px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 76.2963px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 76.66667px;
+  }
+}
+
+@media screen and (min-width: 540px) {
+  html {
+    font-size: 100px;
+  }
+}
+
+.header {
+  background: #344561;
+}
+
+.header .icon-font {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0.28rem;
+  height: 0.28rem;
+}
+
+.header::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.header .header-left {
+  position: relative;
+  width: 0.84rem;
+  height: 0.86rem;
+  float: left;
+}
+
+.header .header-center {
+  width: 3.63rem;
+  height: 0.86rem;
+  float: left;
+  padding-left: 0.07rem;
+  box-sizing: border-box;
+  line-height: 0.86rem;
+}
+
+.header .header-right {
+  position: relative;
+  width: 0.93rem;
+  height: 0.86rem;
+  float: right;
+}
+
+.header .header-right .iconfont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 0.27rem;
+  height: 0.27rem;
+  background: #fff;
+}
+
+.content-box {
+  width: 100%;
+  padding: 0.24rem 0.26rem 0;
+  box-sizing: border-box;
+}
+
+.content-box .conttent-inner {
+  width: 4.89rem;
+  border: 1px solid #c8bab7;
+  box-sizing: border-box;
+  margin-bottom: 0.04rem;
+  padding-left: 0.38rem;
+  position: relative;
+  left: 0;
+}
+
+.content-box .conttent-inner::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+@keyframes donghua {
+  0% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: -100%;
+    opacity: 0;
+  }
+}
+
+.content-box .conttent-inner.dis {
+  animation: donghua .5s linear both;
+}
+
+.content-box .conttent-inner .content-left {
+  width: 2.90rem;
+  height: 1.04rem;
+  float: left;
+  padding-top: 0.19rem;
+  box-sizing: border-box;
+}
+
+.content-box .conttent-inner .content-left .task {
+  display: inline-block;
+  width: 100%;
+  font-size: 0.31rem;
+}
+
+.content-box .conttent-inner .content-left .delete {
+  position: absolute;
+  top: 0.32rem;
+  bottom: 0;
+  width: 2.90rem;
+  height: 0.01rem;
+  background: #ccc;
+  display: none;
+}
+
+.content-box .conttent-inner .content-left.done {
+  color: #ccc;
+}
+
+.content-box .conttent-inner .content-left.done .delete {
+  display: block;
+}
+
+.content-box .conttent-inner .content-right {
+  width: 1.50rem;
+  height: 1.04rem;
+  float: right;
+  line-height: 1.04rem;
+  text-align: center;
+  display: none;
+}
+
+.content-box .conttent-inner .content-right .icon-shanchu {
+  font-size: 0.35rem;
+}
+
+.foot-box {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+}
+
+.foot-box::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+.foot-box .pub {
+  height: 0.78rem;
+  width: 50%;
+  float: left;
+  padding-top: 0.18rem;
+  box-sizing: border-box;
+  text-align: center;
+  color: #005D4D;
+}
+
+.foot-box .pub .iconfont {
+  display: block;
+  width: 0.18rem;
+  height: 0.18rem;
+}
+
+.foot-box .left {
+  float: left;
+}
+
+.foot-box .right {
+  float: right;
+}
