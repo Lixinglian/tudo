@@ -1,11 +1,13 @@
 $(function(){
 	var cont=$('.conttent-inner')
 	var add=$('.header-right')
-	var r=Math.floor(Math.random()*60);
-	var g=Math.floor(Math.random()*105);
+	var radio=$('.plan-box').find('input')
+	var r=Math.floor(Math.random()*0);
+	var g=Math.floor(Math.random()*0);
 	var b=Math.floor(Math.random()*205);
-	var color='rgb('+r+','+g+','+b+')';
+	var color='rgba('+r+','+g+','+b+',0.7)';
 	var tudos=[];
+	var vals;
 	if(localStorage.tudos_data){
 		tudos=JSON.parse(localStorage.tudos_data);
 		render();
@@ -13,6 +15,7 @@ $(function(){
 		localStorage.tudos_data=JSON.stringify(tudos);
 	}
 	
+	//给页面中添加内容
 	function render(){
 		$('.content-box').empty()
 		$.each(tudos,function(i,v){
@@ -24,22 +27,30 @@ $(function(){
 		})
 	}
 	
-	function addTodo(){
-		tudos.push(
-			{task:"学习",time:"5分钟",state:0,isDel:0}
-		)
-		localStorage.tudos_data=JSON.stringify(tudos)
-		render()
-	}
-
-	add.on('click',function(){
-		addTodo();
+	//点击添加，弹出框出现
+	add.on('touchstart',function(){
+		$('.tanchu').css('display','block')
+		$('#inputs').val("")
 	})
 	
+	//点击弹出框中的确定,把用户输入的信息添加到todos数组中
+	$('#subm').on('touchstart',function(){
+		if($('#inputs').val()){
+			$('.tanchu').css('display','none')
+				tudos.push(
+				{task:$('#inputs').val(),time:$('.plan-box input:checked').val(),state:0,isDel:0}
+			)
+			localStorage.tudos_data=JSON.stringify(tudos)
+			render();
+		}else{
+			alert('请输入要添加的事件')
+		}
+	})
+	
+	//三个事件,使li移动
 	var left=null;
 	$('.content-box').on('touchstart','.conttent-inner',function(e){
 		left=e.originalEvent.changedTouches[0].pageX
-		console.log(left)
 	})
 	$('.content-box').on('touchmove','.conttent-inner',function(e){
 		var n=e.originalEvent.changedTouches[0].pageX
@@ -58,15 +69,25 @@ $(function(){
 			localStorage.tudos_data=JSON.stringify(tudos);
 			$(this).find('.content-left').addClass('done')
 			$(this).find('.content-left').css('color','#ccc')
-//			render()
 		}
 	})
-	$('.content-right').parent().parent().on('touchstart','.content-right',function(){
+	
+	
+	
+	//点击删除事件
+	$('.content-box').on('touchstart','.content-right',false)
+	$('.content-box').on('touchstart','.content-right',function(){
 		tudos.splice(tudos[$(this).parent().index],1)
 		localStorage.tudos_data=JSON.stringify(tudos);
+		
 		$(this).closest('li').addClass('dis').delay(800).queue(function(){
 			$(this).remove().dequeue()
 			render()
 		})
 	})
+	
+//	$('.foot-box').on('touchstart','.left',function(){
+//		$(this).parent().closest('.content-box').find('li').remove()
+//	})
+	
 })

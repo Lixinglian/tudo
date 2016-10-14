@@ -7,6 +7,8 @@
 body {
   font-size: 16px;
   color: #fff;
+  background: url(../img/bg.jpeg);
+  background-size: 100%;
 }
 
 i {
@@ -161,7 +163,7 @@ i {
 }
 
 .header {
-  background: #344561;
+  background: #000;
 }
 
 .header .icon-font {
@@ -273,7 +275,7 @@ i {
   bottom: 0;
   width: 2.90rem;
   height: 0.01rem;
-  background: #ccc;
+  background: #fff;
   display: none;
 }
 
@@ -298,6 +300,74 @@ i {
   font-size: 0.35rem;
 }
 
+.tanchu {
+  position: fixed;
+  width: 4.00rem;
+  height: 2.70rem;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background: #344561;
+  display: none;
+}
+
+.tanchu .add-todo {
+  height: 0.55rem;
+  background: #000;
+  line-height: 0.55rem;
+  padding-left: 0.25rem;
+  box-sizing: border-box;
+}
+
+.tanchu .bottom {
+  background: #ccc;
+}
+
+.tanchu .bottom .add-bot {
+  height: 1.65rem;
+  padding: 0.15rem 0.55rem 0;
+  box-sizing: border-box;
+}
+
+.tanchu .bottom .add-bot .shuru {
+  width: 3.00rem;
+  height: 0.55rem;
+  box-sizing: border-box;
+}
+
+.tanchu .bottom .add-bot .shuru #inputs {
+  width: 100%;
+  height: 0.55rem;
+  border: none;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+.tanchu .bottom .add-bot .plan-box {
+  width: 3.00rem;
+  height: 0.90rem;
+  padding: 0.15rem;
+  box-sizing: border-box;
+}
+
+.tanchu .bottom .add-bot .plan-box input {
+  margin: 0.15rem;
+  border: none;
+  outline: none;
+  border-radius: 0.50rem;
+}
+
+.tanchu .bottom #subm {
+  width: 4.00rem;
+  height: 0.55rem;
+  background: #000;
+  border: none;
+  outline: none;
+  color: #fff;
+}
+
 .foot-box {
   width: 100%;
   position: fixed;
@@ -318,7 +388,8 @@ i {
   padding-top: 0.18rem;
   box-sizing: border-box;
   text-align: center;
-  color: #005D4D;
+  color: #fff;
+  background: #000;
 }
 
 .foot-box .pub .iconfont {

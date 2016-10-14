@@ -6,6 +6,8 @@
 body{
     font-size: 16px;
     color: #fff;
+    background:url(../img/bg.jpeg);
+    background-size:100%;
 }
 i{
     font-style: normal;
@@ -67,7 +69,7 @@ i{
             height: 0.28rem;
 //          background: #fff;
         }
-        background: #344561;
+        background: #000;
         &::after{
             content: "";
             clear: both;
@@ -171,12 +173,70 @@ i{
         }
         
     }
+    .tanchu{
+        position: fixed;
+        width:4.00rem;
+        height: 2.70rem;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background:#344561;
+        display: none;
+        .add-todo{
+            height:0.55rem;
+            background:#000;
+            line-height: 0.55rem;
+            padding-left:0.25rem;
+            box-sizing: border-box;
+        }
+        .bottom{
+            background: #ccc;
+            .add-bot{
+                height:1.65rem;
+                padding:0.15rem 0.55rem 0;
+                box-sizing: border-box;
+                .shuru{
+                    width: 3.00rem;
+                    height:0.55rem;
+                    box-sizing: border-box;
+                    #inputs{
+                        width: 100%;
+                        height: 0.55rem;
+                        border: none;
+                        outline: none;
+                        border-radius: 0.25rem;
+                    }
+                }
+                .plan-box{
+                    width:3.00rem;
+                    height:0.90rem;
+                    padding:0.15rem;
+                    box-sizing: border-box;
+                    input{
+                        margin:0.15rem;
+                        border: none;
+                        outline: none;
+                        border-radius: 0.50rem;
+                    }
+                }
+         }
+         #subm{
+                width:4.00rem;
+                height:0.55rem;
+                background: #000;
+                border: none;
+                outline: none;
+                color: #fff;
+         }
+        }
+    }
     .foot-box{
         width:100%;
         position: fixed;
         bottom: 0;
         left: 0;
-//      background:red;
         &::after{
             content: "";
             clear: both;
@@ -189,7 +249,8 @@ i{
             padding-top: 0.18rem;
             box-sizing: border-box;
             text-align: center;
-            color: #005D4D;
+            color: #fff;
+            background:#000;
             .iconfont{
                 display:block;
                 width:0.18rem;
